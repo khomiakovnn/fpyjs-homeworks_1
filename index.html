@@ -6,8 +6,27 @@
   <body>
     <p>Loading, please wait...</p>
     <script>
-        document.write('Hello, world!');
-        console.log('Hello, developers!');
+        let randomNumber = Math.floor(Math.random() * 1000);
+        console.log("Random number: ", randomNumber);
+        let stop = false;               
+        do {
+        let yourNumber = prompt("Insert your number:");
+        console.log("Your number: ", yourNumber);
+        if (isNaN(yourNumber)) {
+          alert('You have inserted not a number. Try again');  
+        } else {
+            if (randomNumber == yourNumber) {
+                alert('You win');
+                stop = true
+            } else {
+                if (randomNumber > yourNumber) {
+                    alert('Your number is smaller then mine. Try again');
+                } else {
+                    alert('Your number is bigger then mine. Try again');
+                }
+            }
+        }
+        } while (stop == false);
     </script>
   </body>
 </html>
